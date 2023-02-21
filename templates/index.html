@@ -1,12 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My first flask page</title>
-</head>
-<body>
-    <h1>hello world</h1>
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% block title %} My first flask {% endblock %}
+
+{% block content %}
+    <h1>Dino-Site!</h1>
+    {% for dino in dinosaurs %}
+    <h2>{{dinosaurs[dino]['name']}}</h2>
+    <figure>
+        <img src="{{url_for('static', filename='images/' + dinosaurs[dino]['image'])}}"
+alt="{{dino}}">
+        <figcaption>{{dinosaurs[dino]['image-credit']}}</figcaption>
+    </figure>
+    {% endfor %}
+{% endblock %}

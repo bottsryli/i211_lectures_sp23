@@ -9,6 +9,21 @@ with open('dinosaurs.csv', 'r') as csvfile:
 'image':row['image'], 'image-credit':row['image-credit'], 'source-url':row['source-url'], 
 'source-credit':row['source-credit']} for row in data}
 
+# @app.route('/')
+# def index():
+#     return render_template('index.html', name="Ryli", dinosaurs=dinosaurs)
+
 @app.route('/')
-def index():
-    return render_template('index.html', name="Ryli", dinosaurs=dinosaurs)
+@app.route('/dino')
+@app.route('/dino/<dino>')
+def index(dino=None):
+    dinosaurs=get_dinos()
+    if dino in dinosaurs.keys():
+        print(dino)
+        return render_template('dino.html', dinosaur=dinosaurs[dino])
+    else:
+        return render_template('index.html', dinosaurs=dinosaurs)
+
+@app.route('/about')
+def about():
+    return render_template('about.html')

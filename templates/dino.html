@@ -4,10 +4,10 @@
 
 {% block content %}
     <figure>
-        <img src=""{{ url_for('static', filename="images/"+dinosaur['image'] )}}>
+        <img src="{{ url_for('static', filename='images/'+dinosaur['image'] )}}">
         <figcaption>{{dinosaur['image-credit']}}</figcaption>
     </figure>
-    <h1>{{dinosaur['name'] }}</h1>
-    <p>{{dinosaur['description'] }}</p>
-    <p>{{dinosaur['source-credit'] }}</p>
+        <h1>{{dinosaur['name'] }}</h1>
+        <p>{{dinosaur['description'] }}</p>
+        <p>{{dinosaur['source-credit'] }}</p>
 {% endblock%}

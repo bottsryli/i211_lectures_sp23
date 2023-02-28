@@ -3,16 +3,20 @@
 {% block title %} My first flask {% endblock %}
 
 {% block content %}
-    <h1>Dino-Site!</h1>
-    {% for dino in dinosaurs %}
-    <h2>{{dinosaurs[dino]['name']}}</h2>
-    <a href="{{ url_for('index', dino=dino)}}">
-    <figure>
-
-        <img src="{{url_for('static', filename='images/' + dinosaurs[dino]['image'])}}"
-alt="{{dino}}">
-        <figcaption>{{dinosaurs[dino]['image-credit']}}</figcaption>
-    </figure>
-</a>
+    <h1 class="mt-5">Dino-Site!</h1>
+    <div class="container">
+        <div class="row">
+            {% for dino in dinosaurs %}
+            <div class="col-12 col-md-6 col lg-4 col-xl-3">
+                <h2>{{dinosaurs[dino]['name']}}</h2>
+                <a href="{{ url_for('index', dino=dino)}}">
+                <figure>
+                    <img class="img-fluid" src="{{url_for('static', filename='images/' + dinosaurs[dino]['image'])}}"alt="{{dino}}">
+                    <figcaption>{{dinosaurs[dino]['source-credit']}}</figcaption>
+                </figure>
+                </a>
+            </div>
     {% endfor %}
+        </div>
+    </div>
 {% endblock %}

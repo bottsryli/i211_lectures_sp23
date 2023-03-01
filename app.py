@@ -8,7 +8,7 @@ FAQ_PATH = app.root_path + '/faq.csv'
 
 
 def get_dinos():
-    with open(DINO_PATH), 'r') as csvfile:
+    with open(DINO_PATH, 'r') as csvfile:
         data = csv.DictReader(csvfile)
         dinosaurs = {row['slug']:{'name':row['name'], 'description':row['description'], 'image':row['image'], 'image-credit':row['image-credit'], 'source-url':row['source-url'], 'source-credit':row['source-credit']} for row in data}
     

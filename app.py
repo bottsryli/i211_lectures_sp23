@@ -23,7 +23,7 @@ def get_dinos():
 # def index():
 #     return render_template('index.html', name="Ryli", dinosaurs=dinosaurs)
 def get_faq():
-    with open('faq.csv', 'r') as csvfile:
+    with open(FAQ_PATH, 'r') as csvfile:
         data = csv.reader(csvfile)
         faq_list = []
         for faq in data:

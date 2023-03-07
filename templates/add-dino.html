@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block title %}Add a Dino {% endblock %}
+
+{% block content %}
+<h1 class="mt-5">Add a Dino!</h1>
+
+<form action="{{ url_for('add_dino') }}" method="POST" name="add_dino_form" >
+    <div>
+        <label for="slug">Slug</label>
+        <input type="text" id="slug" name="slug" size="20">
+    </div>
+    <div>
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" size="20">
+    </div>
+    <div>
+        <label for="description">Description</label>
+        <textarea id="description" name="desription" rows="3" cols="20"></textarea>
+    </div>
+    <div>
+        <label for="image">Image</label>
+        <input type="text" id="image" name="image" size="20">
+    </div>
+    <div>
+        <label for="image-credit">Image Credit</label>
+        <input type="text" id="image-credit" name="image-credit" size="20">
+    </div>
+    <div>
+        <label for="source-url">Source Url</label>
+        <input type="text" id="source-url" name="source-url" size="20">
+    </div>
+    <div>
+        <label for="source-credit">Source Credit</label>
+        <input type="text" id="source-credit" name="source-credit" size="20">
+    </div>
+    <div>
+    <button type="reset" value="Reset">Reset</button>
+    <button type="submit" value="Submit">Submit</button>
+</div>
+</form>
+{% endblock %}

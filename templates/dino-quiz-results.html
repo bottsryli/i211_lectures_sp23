@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %} My first flask {% endblock %}
+
+
+{% block content %}
+<h1 class="mt-5">Dino Quiz Results!</h1>
+{% for question in quiz_results %}
+<h2>{{ question }}</h2>
+<p>{{ quiz_results[question] }}</p>
+
+
+{% endfor %}
+{% endblock %}

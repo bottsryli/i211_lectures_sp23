@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+
+{% block title %} DinoQuiz {% endblock %}
+
+
+{% block content %}
+<h1 class="mt-5">Dino Quiz!</h1>
+
+<form method="POST" name="dino_form">
+
+<div>
+    <h2>Question 1</h2>
+    <legend> Dinosaur fossil have been found on all seven continents.
+        On which continet have the most dinosaur fossil been found?</legend>
+        <select name="Question1" id="Question1">
+            <option value="Africa">Africa</option>
+            <option value="Antartica">Antartica</option>
+            <option value="Asia">Asia</option>
+            <option value="Australia">Australia</option>
+            <option value="Europe">Europe</option>
+            <option value="North America">North America</option>
+            <option value="South America">South America</option>
+        </select>
+</div>
+
+<div>
+    <h2>Question 2</h2>
+    <legend>Which of these dinosarus are herbivores?</legend>
+    <ul>
+        <li>
+            <label for="Triceratops">Triceratops</label>
+            <input type="Checkbox" name="Question2" value="Triceratops" id="Triceratops">
+        </li>
+    </ul>
+    <ul>
+        <li>
+            <label for="Allosaurus">Allosaurus</label>
+            <input type="Checkbox" name="Question2" value="Allosaurus" id="Allosaurus">
+        </li>
+    </ul>
+    <ul>
+        <li>
+            <label for="Stegosaurus">Stegosaurus</label>
+            <input type="Checkbox" name="Question2" value="Stegosaurus" id="Stegosaurus">
+        </li>
+    </ul>
+    <ul>
+        <li>
+            <label for="Velociraptor">Velociraptor</label>
+            <input type="Checkbox" name="Question2" value="Velociraptor" id="Velociraptor">
+        </li>
+    </ul>
+</div>
+
+<div>
+    <h2>Question 3</h2>
+    <legend>All dinosaurs hatch from eggs. True or False?</legend>
+    <ul>
+        <li>
+            <label for="True">True</label>
+            <input type="radio" name="Question3" value="True" id="True">
+        </li>
+    </ul>
+    <ul>
+        <li>
+            <label for="False">False</label>
+            <input type="radio" name="Question3" value="False" id="False">
+        </li>
+    </ul>
+</div>
+
+<div>
+    <h2>Question 4</h2>
+    <legend>Dinosaurs went extinct:</legend>
+    <div>
+        <input type="text" id="Question4" name="Question4">
+        <label for="Question4">million years ago</label>
+    </div>
+</div>
+
+<div>
+    <button type="reset" value="Reset">Reset</button>
+    <button type="submit" value="Submit">Submit</button>
+</div>
+
+</form>
+{% endblock %}

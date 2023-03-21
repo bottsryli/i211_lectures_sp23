@@ -8,7 +8,11 @@
 {% for question in quiz_results %}
 <h2>{{ question }}</h2>
 <p>{{ quiz_results[question] }}</p>
-
-
 {% endfor %}
+
+<h2 class="{% if score == 4 %}text-success{% else %}text-danger{% endif %}">Final score: {{ score }}/4</h2>
+
+<a href="{{ url_for('dino_quiz') }}"> 
+    <button class="btn btn-primary" type="button">Try Again</button>
+</a>
 {% endblock %}

@@ -94,3 +94,5 @@ SELECT * FROM pet
 SELECT name, dob
 FROM pet
 WHERE species='dog' AND n_date IS NULL;
+
+ALTER TABLE customer MODIFY id INT PRIMARY KEY;

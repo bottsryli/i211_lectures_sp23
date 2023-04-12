@@ -1,8 +1,14 @@
-from flask import Flask, render_template, url_for, request, redirect
+from flask import Flask, render_template, url_for, request, redirect, pymysql
 import csv
 
 app = Flask(__name__)
-
+app.config.from_pyfile(app.root_path + '/config.py')
+conn = pymysql.connect(
+                    host=app.config['DB_HOST'],
+                    user=app.config['DB_USER'],
+                    password=app.config['DB_PASS'],
+                    database=app.config['DB_DATABASE'],
+                    cursorclass=pymysql.cursors.DictCursor)
 DINO_PATH = app.root_path + '/dinosaurs.csv'
 FAQ_PATH = app.root_path + '/faq.csv'
 DINO_KEYS = ['slug', 'name', 'description', 'image', 'image-credit', 'source-url', 'source-credit']
